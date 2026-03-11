@@ -1,0 +1,18 @@
+[workspace]
+authors = ["Kasper Munch <kaspermunch@birc.au.dk>"]
+channels = ["conda-forge", "munch-group"]
+name = "status-monitor-vscode"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks.dependencies]
+cmd = "npm install && npm install --loglevel error -g @vscode/vsce"
+
+[tasks.build]
+cmd = "npm run compile && vsce package"
+depends-on = ["dependencies"]
+
+[tasks.install]
+cmd = "which code && code --install-extension status-monitor.vsix || echo 'Install from command palette: Extensions: Install from VSIX...';"
+depends-on = ["build"]
+

@@ -1,0 +1,76 @@
+{
+  "name": "status-monitor",
+  "displayName": "Status Monitor",
+  "description": "Runs a shell command and reflects output as a colored status bar icon",
+  "version": "0.0.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kmt/status-monitor-vscode"
+  },
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Status Monitor",
+      "properties": {
+        "statusMonitor.command": {
+          "type": "string",
+          "default": "echo ok",
+          "description": "Shell command to run"
+        },
+        "statusMonitor.envVariable": {
+          "type": "string",
+          "default": "",
+          "description": "Environment variable name to read (passed to the command as env)"
+        },
+        "statusMonitor.intervalSeconds": {
+          "type": "number",
+          "default": 10,
+          "description": "How often to re-run the command (seconds)"
+        },
+        "statusMonitor.successPattern": {
+          "type": "string",
+          "default": "ok",
+          "description": "Regex pattern in output that means SUCCESS (green)"
+        },
+        "statusMonitor.warningPattern": {
+          "type": "string",
+          "default": "warn",
+          "description": "Regex pattern in output that means WARNING (yellow)"
+        },
+        "statusMonitor.label": {
+          "type": "string",
+          "default": "",
+          "description": "Default text label shown in the status bar next to the icon (used when a status-specific label is not set)"
+        },
+        "statusMonitor.labelSuccess": {
+          "type": "string",
+          "default": "",
+          "description": "Label shown when status is success (falls back to statusMonitor.label)"
+        },
+        "statusMonitor.labelWarning": {
+          "type": "string",
+          "default": "",
+          "description": "Label shown when status is warning (falls back to statusMonitor.label)"
+        },
+        "statusMonitor.labelFailure": {
+          "type": "string",
+          "default": "",
+          "description": "Label shown when status is error (falls back to statusMonitor.label)"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0"
+  }
+}
