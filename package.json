@@ -3,11 +3,12 @@
   "displayName": "Status Monitor",
   "description": "Runs a shell command and reflects output as a colored status bar icon",
   "version": "0.0.1",
+  "publisher": "munch-group",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kmt/status-monitor-vscode"
-  },
+    "url": "https://github.com/munch-group/status-monitor-vscode"
+  },  
   "engines": { "vscode": "^1.85.0" },
   "categories": ["Other"],
   "activationEvents": ["onStartupFinished"],
