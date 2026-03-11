@@ -3,7 +3,7 @@ authors = ["Kasper Munch <kaspermunch@birc.au.dk>"]
 channels = ["conda-forge", "munch-group"]
 name = "status-monitor-vscode"
 platforms = ["osx-arm64"]
-version = "0.1.0"
+version = "0.0.1"
 
 [tasks.dependencies]
 cmd = "npm install && npm install --loglevel error -g @vscode/vsce"
