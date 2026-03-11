@@ -22,9 +22,7 @@ Click the icon to refresh immediately. Hover for full output.
 code --install-extension status-monitor-0.0.1.vsix
 ```
 
----
-
-## Configuration (settings.json)
+## Configuration
 
 After installing, configure via VS Code Settings or directly in `settings.json`:
 
@@ -39,10 +37,10 @@ After installing, configure via VS Code Settings or directly in `settings.json`:
   // How often to re-run, in seconds
   "statusMonitor.intervalSeconds": 10,
 
-  // Regex: output matching this → green ✅
+  // Regex: output matching this → green
   "statusMonitor.successPattern": "ok|healthy",
 
-  // Regex: output matching this → yellow ⚠️  (checked after success)
+  // Regex: output matching this → yellow  (checked after success)
   "statusMonitor.warningPattern": "warn|degraded",
 
   // Default label shown next to the icon (empty = icon only)
@@ -55,11 +53,10 @@ After installing, configure via VS Code Settings or directly in `settings.json`:
 }
 ```
 
-The status bar item appears on the **bottom-right** of VS Code.  
-Click it to refresh immediately. Hover for full command output.
+The status bar item appears on the **bottom-right** of VS Code. Click it to refresh immediately. Hover for full command output.
 
 
-## SLURM walltime warning
+## Example: SLURM walltime warning
 
 I made the extension to have it warn me when the SLURM job that of the remote vscode is running out of time. Add this to your user settings:
 
