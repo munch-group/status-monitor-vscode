@@ -2,7 +2,7 @@
   "name": "status-monitor",
   "displayName": "Status Monitor",
   "description": "Runs a shell command and reflects output as a colored status bar icon",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "publisher": "munch-group",
   "license": "MIT",
   "icon": "images/icon.png",
