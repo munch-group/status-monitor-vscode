@@ -58,7 +58,7 @@ The status bar item appears on the **bottom-right** of VS Code. Click it to refr
 
 ## Example: SLURM walltime warning
 
-I made the extension to have it warn me when the SLURM job that of the remote vscode is running out of time. Add this to your user settings:
+I made the extension to have it warn me when the vscode SLURM job launched by slurm-code is running out of time. Add this to your user settings:
 
 ```jsonc
 {
