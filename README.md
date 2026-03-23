@@ -62,8 +62,8 @@ I made the extension to have it warn me when the vscode SLURM job launched by sl
 
 ```jsonc
 {
-  "statusMonitor.command": "status=$(sacct -j $SLURM_JOB_ID -X -n -P --format=\"time,elapsed,state\"); [ -z \"$status\" ] && echo \"OK\" || [[ $status == *\"CANCELLED\"* ]] && echo \"CANCELLED\" || echo $status | awk -F'[:|]' '{m=($1*60+$2)-($4*60+$5); if(m>30) print \"PLENTY\"; else if(m>5) print \"TWENTY\"; else print \"FIVE\"}'",
-  "statusMonitor.envVariable": "SLURM_JOB_ID", 
+  "statusMonitor.command": "status=$(sacct -j $VS_SLURM_JOB_ID -X -n -P --format=\"time,elapsed,state\"); [ \"$(hostname)\" == \"fe-open-01\" ] && echo \"OK\" || [ -z \"$status\" ] && echo \"OK\" || [[ $status == *\"CANCELLED\"* ]] && echo \"CANCELLED\" || echo $status | awk -F'[:|]' '{m=($1*60+$2)-($4*60+$5); if(m>30) print \"PLENTY\"; else if(m>5) print \"TWENTY\"; else print \"FIVE\"}'",
+  "statusMonitor.envVariable": "VS_SLURM_JOB_ID", 
   "statusMonitor.intervalSeconds": 30,
   "statusMonitor.successPattern": "OK|PLENTY",
   "statusMonitor.warningPattern": "TWENTY",
