@@ -8,6 +8,10 @@ platforms = ["osx-arm64"]
 [tasks.dependencies]
 cmd = "npm install && npm install --loglevel error -g @vscode/vsce"
 
+[tasks.bump]
+cmd = "vsce publish minor"
+depends-on = ["dependencies"]
+
 [tasks.build]
 cmd = "npm run compile && vsce package"
 depends-on = ["dependencies"]
@@ -16,3 +20,5 @@ depends-on = ["dependencies"]
 cmd = "which code && code --install-extension status-monitor.vsix || echo 'Install from command palette: Extensions: Install from VSIX...';"
 depends-on = ["build"]
 
+
+# https://marketplace.visualstudio.com/manage/publishers/munch-group
